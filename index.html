@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f8">
+  <title>SmartSchool — Student Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="SmartSchool beranda">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>smartschool</strong><small>STUDENT WORKSPACE</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Navigasi utama">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span>Overview</button>
+        <button class="nav-item" data-page="schedule"><span class="nav-icon">▦</span>Jadwal pelajaran</button>
+        <button class="nav-item" data-page="tasks"><span class="nav-icon">✓</span>Tugas <span class="nav-count" id="taskNavCount">3</span></button>
+        <button class="nav-item" data-page="grades"><span class="nav-icon">⌁</span>Nilai akademik</button>
+        <button class="nav-item" data-page="attendance"><span class="nav-icon">◷</span>Kehadiran</button>
+        <button class="nav-item" data-page="notes"><span class="nav-icon">▤</span>Catatan</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip">
+          <div class="tip-icon">✦</div>
+          <strong>Belajar sedikit,<br>konsisten setiap hari.</strong>
+          <p>Progress kecil tetap berarti. Terus bergerak!</p>
+          <div class="tip-progress"><span></span></div>
+          <small>YOUR DAILY MOMENTUM</small>
+        </div>
+        <button class="nav-item" data-page="settings"><span class="nav-icon">⚙</span>Pengaturan</button>
+        <div class="profile-mini">
+          <div class="avatar" id="miniAvatar">AR</div>
+          <div class="profile-mini-copy"><strong id="miniName">Ari Ramadhan</strong><small id="miniClass">XI · Rekayasa Perangkat Lunak</small></div>
+          <button class="icon-button small" id="profileQuick" aria-label="Buka profil">···</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuToggle" aria-label="Buka menu">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="breadcrumbPage">Overview</strong></div>
+        <div class="topbar-actions">
+          <div class="date-chip"><span class="status-dot"></span><span id="todayLabel">Senin, 12 Oktober 2026</span></div>
+          <button class="icon-button" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">☼</button>
+          <button class="icon-button notification-button" id="notificationButton" aria-label="Lihat ringkasan notifikasi">♧<i></i></button>
+        </div>
+      </header>
+
+      <section class="page active" id="page-overview">
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL LEARNING SPACE</div>
+            <h1 id="greetingTitle">Selamat pagi, Ari <span class="wave">✳</span></h1>
+            <p class="subheading">Satu langkah kecil hari ini, satu langkah lebih dekat ke tujuanmu.</p>
+          </div>
+          <button class="primary-button" data-action="add-task"><span>＋</span> Tambah tugas</button>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-copy">
+            <div class="hero-label"><span class="live-dot"></span> LIVE CLASS STATUS</div>
+            <h2 id="heroTitle">Waktunya mulai belajar.</h2>
+            <p id="heroDescription">Cek jadwalmu dan siapkan diri untuk kelas berikutnya.</p>
+            <div class="hero-meta">
+              <span class="hero-meta-icon">▦</span>
+              <span id="heroSubject">Jadwal hari ini</span>
+              <span class="meta-divider"></span>
+              <span id="heroTime">—</span>
+            </div>
+            <button class="hero-button" data-page="schedule">Lihat jadwal <span>↗</span></button>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="hero-orb"><div class="orb-core">S<span>.</span></div></div>
+            <div class="floating-card float-top"><span class="float-icon">✦</span><span><b>Stay curious</b><small>Learn something new</small></span></div>
+            <div class="floating-card float-bottom"><span class="float-check">✓</span><span><b id="heroTaskDone">2 tugas selesai</b><small>Keep up the good work</small></span></div>
+            <div class="visual-spark spark-a">✦</div><div class="visual-spark spark-b">·</div>
+          </div>
+        </div>
+
+        <div class="section-heading stats-heading"><div><h2>Ringkasan akademik</h2><p>Gambaran singkat aktivitas belajarmu.</p></div><button class="text-button" data-page="grades">Lihat detail <span>→</span></button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-violet">⌁</span><span class="stat-trend trend-good">Baru mulai</span></div><div class="stat-label">Rata-rata nilai</div><div class="stat-number"><span id="averageGrade">0.0</span><small>/ 100</small></div><div class="stat-foot"><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>Semester ini</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-green">✓</span><span class="stat-trend trend-neutral">Baru mulai</span></div><div class="stat-label">Kehadiran</div><div class="stat-number"><span id="attendancePercent">0</span><small>%</small></div><div class="stat-foot"><div class="tiny-progress"><span id="attendanceBar" style="width:0%"></span></div><span>Semester ini</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-amber">◷</span><span class="stat-trend trend-neutral">Perlu fokus</span></div><div class="stat-label">Tugas aktif</div><div class="stat-number"><span id="activeTasks">3</span><small> tugas</small></div><div class="stat-foot"><div class="task-dots"><i></i><i></i><i></i><i></i><i></i></div><span id="taskDueLabel">2 segera tenggat</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-blue">▦</span><span class="stat-trend trend-good">Terjadwal</span></div><div class="stat-label">Kelas hari ini</div><div class="stat-number"><span id="todayClasses">6</span><small> kelas</small></div><div class="stat-foot"><span class="foot-dot"></span><span id="nextClassFoot">Berikutnya 08.00</span></div></article>
+        </div>
+
+        <div class="overview-grid">
+          <section class="panel schedule-panel">
+            <div class="panel-heading"><div><h2>Jadwal hari ini</h2><p>Atur ritme, jalani satu per satu.</p></div><button class="icon-button" data-page="schedule" aria-label="Lihat semua jadwal">↗</button></div>
+            <div class="day-strip" id="overviewDayStrip"></div>
+            <div class="timeline" id="overviewTimeline"></div>
+            <button class="panel-link" data-page="schedule">Buka jadwal lengkap <span>→</span></button>
+          </section>
+          <section class="panel task-panel">
+            <div class="panel-heading"><div><h2>Prioritas tugas</h2><p>Yang perlu kamu selesaikan berikutnya.</p></div><button class="icon-button" data-page="tasks" aria-label="Lihat semua tugas">↗</button></div>
+            <div class="task-progress-header"><span>Progress tugas</span><strong id="taskProgressText">40%</strong></div>
+            <div class="wide-progress"><span id="taskProgressBar" style="width:40%"></span></div>
+            <div id="overviewTasks" class="overview-tasks"></div>
+            <button class="panel-link" data-page="tasks">Kelola semua tugas <span>→</span></button>
+          </section>
+        </div>
+        <footer class="page-footer"><span>© 2026 SmartSchool Workspace</span><span>Made for better learning <b>✦</b></span></footer>
+      </section>
+
+      <section class="page" id="page-schedule">
+        <div class="page-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> PLAN YOUR WEEK</div><h1>Jadwal pelajaran</h1><p class="subheading">Semua kelasmu, tertata dalam satu tempat.</p></div><button class="primary-button" id="addClassButton">＋ Tambah kelas</button></div>
+        <div class="schedule-toolbar panel"><div><span class="toolbar-caption">PILIH HARI</span><div class="day-selector" id="scheduleDaySelector"></div></div><div class="current-class-chip"><span class="live-dot"></span><span id="scheduleStatus">Memuat jadwal...</span></div></div>
+        <div class="schedule-page-grid"><section class="panel schedule-main-panel"><div class="panel-heading"><div><h2 id="scheduleDayTitle">Senin</h2><p id="scheduleDaySubtitle">6 sesi pembelajaran terjadwal</p></div><span class="soft-pill">WEEKLY TIMETABLE</span></div><div class="full-timetable" id="fullTimetable"></div></section>
+        <aside class="panel day-summary"><div class="panel-heading"><div><h2>Ringkasan hari</h2><p>Fokus dan persiapan.</p></div><span class="summary-star">✦</span></div><div class="summary-big"><strong id="summaryClassCount">6</strong><span>kelas terjadwal</span></div><div class="summary-line"><span>Total durasi belajar</span><strong id="summaryDuration">6 jam</strong></div><div class="summary-line"><span>Waktu istirahat</span><strong id="summaryBreak">45 menit</strong></div><div class="summary-line"><span>Ruang kelas</span><strong id="summaryRoom">Lab / R. 02</strong></div><div class="focus-card"><span>✧ FOCUS TIP</span><p id="focusTip">Siapkan catatan sebelum kelas dimulai agar lebih mudah mengikuti materi.</p></div><button class="secondary-button full-width" id="exportSchedule">↓ Ekspor jadwal (.json)</button></aside></div>
+        <footer class="page-footer"><span>© 2026 SmartSchool Workspace</span><span>One day at a time <b>✦</b></span></footer>
+      </section>
+
+      <section class="page" id="page-tasks">
+        <div class="page-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> STAY ON TRACK</div><h1>Daftar tugas</h1><p class="subheading">Rencanakan, kerjakan, lalu rayakan progresmu.</p></div><button class="primary-button" data-action="add-task">＋ Tambah tugas</button></div>
+        <div class="task-overview-cards" id="taskOverviewCards"></div>
+        <div class="panel task-list-panel"><div class="panel-heading task-list-toolbar"><div><h2>Semua tugas</h2><p>Kelola tenggat dan status tugasmu.</p></div><div class="filter-controls"><label class="search-field"><span>⌕</span><input id="taskSearch" type="search" placeholder="Cari tugas..."></label><select id="taskFilter" aria-label="Filter status tugas"><option value="all">Semua status</option><option value="active">Belum selesai</option><option value="done">Selesai</option></select></div></div><div class="task-table-wrap"><table class="data-table"><thead><tr><th>TUGAS</th><th>MATA PELAJARAN</th><th>TENGGAT</th><th>PRIORITAS</th><th>STATUS</th><th></th></tr></thead><tbody id="taskTableBody"></tbody></table></div><div class="empty-state hidden" id="taskEmpty"><span>✦</span><strong>Belum ada tugas di sini</strong><p>Coba ubah filter atau tambahkan tugas baru.</p></div></div>
+        <footer class="page-footer"><span>© 2026 SmartSchool Workspace</span><span>Progress over perfection <b>✦</b></span></footer>
+      </section>
+
+      <section class="page" id="page-grades">
+        <div class="page-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> ACADEMIC PERFORMANCE</div><h1>Nilai akademik</h1><p class="subheading">Lihat perkembanganmu dan temukan ruang untuk bertumbuh.</p></div><button class="secondary-button" id="exportGrades">↓ Ekspor nilai</button></div>
+        <div class="grades-top-grid"><div class="panel grade-feature"><div class="grade-feature-top"><span class="stat-icon icon-violet">⌁</span><span class="soft-pill">SEMESTER GANJIL</span></div><p>Rata-rata keseluruhan</p><div class="grade-score" id="gradeBigScore">0.0<span>/100</span></div><div class="grade-meter"><span id="gradeMeter" style="width:0%"></span></div><div class="grade-feature-foot"><span>Target pribadi</span><strong>90.0 <span class="muted">/ 100</span></strong></div></div><div class="panel grade-insight"><div class="panel-heading"><div><h2>Performa mata pelajaran</h2><p>Perbandingan nilai terbaru.</p></div></div><div id="gradeBars" class="grade-bars"></div></div></div>
+        <div class="panel grades-table-panel"><div class="panel-heading"><div><h2>Rekap nilai</h2><p>Isi nilai lewat tombol Edit nilai.</p></div><button class="secondary-button small-button" id="editGrades">✎ Edit nilai</button></div><div class="task-table-wrap"><table class="data-table"><thead><tr><th>MATA PELAJARAN</th><th>UH</th><th>TUGAS</th><th>UTS</th><th>UAS</th><th>RATA-RATA</th><th>PREDIKAT</th></tr></thead><tbody id="gradesTableBody"></tbody></table></div></div>
+        <footer class="page-footer"><span>© 2026 SmartSchool Workspace</span><span>Keep learning <b>✦</b></span></footer>
+      </section>
+
+      <section class="page" id="page-attendance">
+        <div class="page-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> SHOW UP FOR YOURSELF</div><h1>Kehadiran</h1><p class="subheading">Konsistensi adalah bagian dari pencapaian.</p></div><div class="title-actions"><button class="secondary-button" id="exportAttendance">↓ Ekspor rekap</button><button class="primary-button" id="addAttendanceButton">＋ Tambah kehadiran</button></div></div>
+        <div class="attendance-top-grid"><div class="panel attendance-score-card"><div class="attendance-score-ring" id="attendanceRing"><div><strong id="attendanceBig">0%</strong><small>KEHADIRAN</small></div></div><div><h2>Pantau kehadiranmu.</h2><p>Tambahkan catatan setiap pertemuan agar rekap kehadiran selalu akurat.</p></div></div><div class="attendance-mini-grid"><div class="panel mini-attendance"><span class="mini-att-icon present">✓</span><small>HADIR</small><strong id="presentCount">0</strong><span>pertemuan</span></div><div class="panel mini-attendance"><span class="mini-att-icon late">◷</span><small>TERLAMBAT</small><strong id="lateCount">0</strong><span>pertemuan</span></div><div class="panel mini-attendance"><span class="mini-att-icon absent">×</span><small>ALPHA / IZIN</small><strong id="absentCount">0</strong><span>pertemuan</span></div></div></div>
+        <div class="panel attendance-history"><div class="panel-heading"><div><h2>Riwayat kehadiran</h2><p>Mulai dari nol. Gunakan ✎ untuk mengubah dan × untuk menghapus.</p></div><select id="attendanceMonth" aria-label="Pilih bulan"><option value="all">Semua bulan</option></select></div><div class="task-table-wrap"><table class="data-table"><thead><tr><th>TANGGAL</th><th>MATA PELAJARAN</th><th>JAM</th><th>STATUS</th><th>CATATAN</th><th></th></tr></thead><tbody id="attendanceTableBody"></tbody></table></div><div class="empty-state hidden" id="attendanceEmpty"><span>✦</span><strong>Belum ada catatan kehadiran</strong><p>Coba pilih bulan lain atau tambahkan kehadiran baru.</p></div></div>
+        <footer class="page-footer"><span>© 2026 SmartSchool Workspace</span><span>Consistency matters <b>✦</b></span></footer>
+      </section>
+
+      <section class="page" id="page-notes">
+        <div class="page-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> CAPTURE YOUR IDEAS</div><h1>Catatan belajar</h1><p class="subheading">Simpan hal penting agar mudah ditemukan kembali.</p></div><button class="primary-button" id="addNoteButton">＋ Catatan baru</button></div>
+        <div class="notes-toolbar"><label class="search-field"><span>⌕</span><input id="noteSearch" type="search" placeholder="Cari judul atau isi catatan..."></label><span id="noteCount" class="muted">3 catatan</span></div><div id="notesGrid" class="notes-grid"></div>
+        <footer class="page-footer"><span>© 2026 SmartSchool Workspace</span><span>Ideas become progress <b>✦</b></span></footer>
+      </section>
+
+      <section class="page" id="page-settings">
+        <div class="page-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> MAKE IT YOURS</div><h1>Pengaturan</h1><p class="subheading">Personalisasi workspace sesuai kebutuhanmu.</p></div></div>
+        <div class="settings-layout"><section class="panel settings-panel"><div class="panel-heading"><div><h2>Profil siswa</h2><p>Informasi profil yang tampil di workspace.</p></div><span class="stat-icon icon-violet">♙</span></div><form id="profileForm" class="settings-form"><label>Nama lengkap<input id="profileName" required maxlength="50" value="Ari Ramadhan"></label><label>Kelas / jurusan<input id="profileClass" required maxlength="80" value="XI · Rekayasa Perangkat Lunak"></label><label>Email siswa<input id="profileEmail" type="email" required value="ari@student.sch.id"></label><label>Target nilai rata-rata<input id="profileTarget" type="number" min="0" max="100" required value="90"></label><button class="primary-button" type="submit">Simpan profil</button></form></section><section class="panel settings-panel"><div class="panel-heading"><div><h2>Preferensi</h2><p>Atur pengalaman penggunaan.</p></div><span class="stat-icon icon-blue">⚙</span></div><div class="setting-row"><div><strong>Tema gelap</strong><p>Kurangi cahaya layar saat belajar malam.</p></div><button class="switch" id="settingsThemeToggle" role="switch" aria-checked="false" aria-label="Aktifkan tema gelap"><span></span></button></div><div class="setting-row"><div><strong>Notifikasi pengingat</strong><p>Tampilkan pengingat tenggat di workspace.</p></div><button class="switch on" id="reminderToggle" role="switch" aria-checked="true" aria-label="Aktifkan pengingat"><span></span></button></div><div class="setting-row"><div><strong>Data demo</strong><p>Unduh atau pulihkan data lokal.</p></div><button class="secondary-button small-button" id="backupData">Ekspor data</button></div><div class="setting-danger"><strong>Zona reset</strong><p>Memulihkan contoh awal akan menghapus perubahan lokal di perangkat ini.</p><button class="danger-button" id="resetData">Pulihkan data contoh</button></div></section></div>
+        <footer class="page-footer"><span>© 2026 SmartSchool Workspace</span><span>Designed for focus <b>✦</b></span></footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> SMARTSCHOOL</div><h2 id="modalTitle">Tambah tugas</h2></div><button class="icon-button" id="closeModal" aria-label="Tutup">×</button></div><form id="modalForm" class="modal-form"></form></section>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
